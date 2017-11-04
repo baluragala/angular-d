@@ -3,7 +3,6 @@
   <h3>{{product.price | currency:'GBP':true }}</h3>
   <h4>{{product.stock}}</h4>
   <h4>{{today | date:'yyyy-MM-dd HH:mm:ss'}}</h4>
-  <h2>{{2 | toPower:10:5 | currency:'GBP':true}}</h2>
   <button *ngIf="!inCart" (click)="addToCart(product)">Add To Cart</button>
   <button *ngIf="inCart" (click)="removeFromCart(product)">Remove From Cart</button>
 </div>

@@ -1,25 +1,24 @@
+import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'la-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  
 })
 export class ProductListComponent implements OnInit {
 
-  products:[{name:string,price:number,stock:number}];
+  ///{name:string,price:number,stock:number}
+  products:Array<any>;
   title:string='Top Selling Products'
   header:Object = {title:'Top Selling Products'}
   cartCount : number=0;
-  constructor() { }
+ 
+  constructor(private productService:ProductService) { }
 
   ngOnInit() {
-    this.products = [
-      {name:'iphone',price:100,stock:10},
-      {name:'galaxy',price:80,stock:10},
-      {name:'pixel',price:75,stock:10},
-      {name:'oppo',price:65,stock:10},
-      ]
+    this.products = this.productService.getProducts();
   }
 
   getProducts(){
