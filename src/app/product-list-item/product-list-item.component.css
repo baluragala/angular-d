@@ -1,0 +1,13 @@
+div {
+    border: 2px solid cornflowerblue;
+    margin: 10px;
+    padding-left: 25px;
+}
+
+.out-of-stock{
+    background: orange;
+}
+
+.stock {
+    background: lightgreen;
+}

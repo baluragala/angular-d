@@ -1,0 +1,6 @@
+<app-header [headerText]="header" [options]="2*2"></app-header>
+<h2>Cart Count:{{cartCount}}</h2>
+<la-product-list-item (addToCartEvent)="updateCart($event)"
+  *ngFor="let p of products"
+[product]="p"></la-product-list-item>
+
